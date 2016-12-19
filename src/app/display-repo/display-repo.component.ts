@@ -20,10 +20,14 @@ export class DisplayRepoComponent implements OnInit {
         private githubSearchService: GithubSearchService
   ) { }
 
-ngOnInit(): void {
-  this.route.params
-    .switchMap((params: Params) => this.githubSearchService.getGitRepo(+params['id']))
-    .subscribe(repo => this.repo = repo);
-}
+    ngOnInit(): void {
+      this.route.params
+        .switchMap((params: Params) => this.githubSearchService.getGitRepo(+params['id']))
+        .subscribe(repo => this.repo = repo);
+    }
+
+    goBack(): void {
+        this.location.back();
+    }
 
 }

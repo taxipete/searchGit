@@ -1,5 +1,19 @@
-<h1 class="mdc-typography--display2">
-  {{title}}
-</h1>
- <router-outlet></router-outlet>
-<!--<app-search></app-search>-->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <a class="mdl-layout-title" href="/repo" style="color: white;text-decoration: none;">{{title}}</a>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+
+    </div>
+  </header>
+
+  <main class="mdl-layout__content">
+    <div class="page-content">
+    
+         <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

@@ -1,8 +1,16 @@
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input"  #term type="text" (keyup.enter)="getGitRepo(term.value)"  (blur)="getGitRepo(term.value)"  type="text" id="search">
-    <label class="mdl-textfield__label" for="search">Search</label>
+    <br><br>    
+<div class="mdl-grid mdl-cell--8-col" >
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--8-col">
+        <input class="mdl-textfield__input"  #term type="text" (keyup.enter)="getGitRepo(term.value)"  (blur)="getGitRepo(term.value)"  type="text" id="search">
+        <label class="mdl-textfield__label" for="search">Search</label>
+    </div>
+    <div class="mdl-cell--4-col">
+        <button (click)="getGitRepo(term.value)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent ">Search</button>
+    </div>
 </div>
-<button (click)="getGitRepo(term.value)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Search</button>
+    <div class="mdl-spinner mdl-js-spinner"  [class.is-active]="showSpinner"></div>
+
 
 
 <search-list [items]="items"></search-list>

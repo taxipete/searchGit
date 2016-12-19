@@ -1,13 +1,35 @@
 
+
     <div class="mdl-card mdl-cell--12-col mdl-grid mdl-shadow--6dp" *ngIf="repo">
-        <div class="mdl-cell mdl-cell--2-col">
+        <div class="mdl-cell mdl-cell--2-col languageWrapper">
             <img [src]="repo.owner.avatar_url"  border="0" alt="" style="width: 100%">
-            <div>Language</div>
-            <div>{{repo.language}}</div>
+
+            <div class="language">{{repo.language}}</div>
         </div>
         <div class="mdl-cell mdl-cell--10-col">
             <h2 class="display-2">{{repo.name}}</h2>
             <p>{{repo.description}}</p>
+
+                <div class="mdl-grid myLinks">
+                    <div class="mdl-cell--4-col myUrls">
+                      <div class="mdl-textfield mdl-js-textfield">
+                          <div class="myLabel">Git Url</div>
+                        <input class="mdl-textfield__input" type="text"[value]="repo.git_url" disabled="disabled">
+                      </div>
+                    </div>
+                    <div class="mdl-cell--4-col myUrls">
+                      <div class="mdl-textfield mdl-js-textfield">
+                          <div class="myLabel">ssh Url</div>
+                        <input class="mdl-textfield__input" type="text"  [value]="repo.ssh_url" disabled="disabled">
+                      </div>
+                    </div>
+                    <div class="mdl-cell--4-col ">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" [href]="repo.html_url" target="_blank">
+                          Go to repository
+                      </a>
+                    </div>
+                </div>
+
 
             <div class="mdl-grid">
                 <div class="mdl-cell--4-col mdl-shadow--2dp display-panels">
@@ -76,12 +98,5 @@
                     <tickbox [value]="repo.has_pages"></tickbox>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
-             <pre>{{repo | json}}</pre>
         </div>
     </div>
