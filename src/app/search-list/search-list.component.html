@@ -1,0 +1,22 @@
+
+<div class="mdl-card mdl-shadow--2dp mdl-grid mdl-cell--8-col" *ngFor="let item of items">
+        <div class="mdl-cell mdl-cell--2-col">
+          <div class="mdl-card__media">
+            <img [src]="item.owner.avatar_url"  border="0" alt="" style="width: 100%">
+          </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--10-col">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{item.name}}</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+              {{item.created_at | date:"MM/dd/yy"}} <br>
+              {{item.description}}
+          </div>
+          <div class="mdl-card__actions">
+              <a href="#" [routerLink]="['/repo', item.id]">More Information</a>
+          </div>
+        </div>
+
+</div>

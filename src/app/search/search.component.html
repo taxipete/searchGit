@@ -1,0 +1,9 @@
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input"  #term type="text" (keyup.enter)="getGitRepo(term.value)"  (blur)="getGitRepo(term.value)"  type="text" id="search">
+    <label class="mdl-textfield__label" for="search">Search</label>
+</div>
+<button (click)="getGitRepo(term.value)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Search</button>
+
+
+<search-list [items]="items"></search-list>
+<h2 *ngIf="errorMessage">{{errorMessage}}</h2>

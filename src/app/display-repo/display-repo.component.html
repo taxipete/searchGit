@@ -1,0 +1,87 @@
+
+    <div class="mdl-card mdl-cell--12-col mdl-grid mdl-shadow--6dp" *ngIf="repo">
+        <div class="mdl-cell mdl-cell--2-col">
+            <img [src]="repo.owner.avatar_url"  border="0" alt="" style="width: 100%">
+            <div>Language</div>
+            <div>{{repo.language}}</div>
+        </div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <h2 class="display-2">{{repo.name}}</h2>
+            <p>{{repo.description}}</p>
+
+            <div class="mdl-grid">
+                <div class="mdl-cell--4-col mdl-shadow--2dp display-panels">
+                    <div>Created On</div>
+                    <h4 class="display-3">{{repo.created_at | date:"MM/dd/yy" }}</h4>
+                </div>
+                <div class="mdl-cell--4-col  mdl-shadow--2dp display-panels">
+                    <div>Last Update</div>
+                    <h4 class="display-3">{{repo.updated_at | date:"MM/dd/yy" }}</h4>
+                </div>
+                <div class="mdl-cell--4-col  mdl-shadow--2dp display-panels">
+                    <div>Pushed</div>
+                    <h4 class="display-3">{{repo.pushed_at | date:"MM/dd/yy" }}</h4>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>Size</div>
+                    <h5 class="display-3">{{repo.size }}</h5>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>Stargazers</div>
+                    <h5 class="display-3">{{repo.stargazers_count }}</h5>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>Watchers</div>
+                    <h5 class="display-3">{{repo.watchers_count }}</h5>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>open_issues</div>
+                    <h5 class="display-3">{{repo.open_issues }}</h5>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>forks</div>
+                    <h5 class="display-3">{{repo.forks }}</h5>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>network_count</div>
+                    <h5 class="display-3">{{repo.network_count }}</h5>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>subscribers_count</div>
+                    <h5 class="display-3">{{repo.subscribers_count }}</h5>
+                </div>
+            </div>
+
+            <div class="mdl-grid">
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>Fork</div>
+                    <tickbox [value]="repo.fork"></tickbox>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>has_issues</div>
+                    <tickbox [value]="repo.has_issues"></tickbox>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>has_wiki</div>
+                    <tickbox [value]="repo.has_wiki"></tickbox>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>has_downloads</div>
+                    <tickbox [value]="repo.has_downloads"></tickbox>
+                </div>
+                <div class="mdl-cell--2-col mdl-shadow--2dp display-panels">
+                    <div>has_pages</div>
+                    <tickbox [value]="repo.has_pages"></tickbox>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+             <pre>{{repo | json}}</pre>
+        </div>
+    </div>
